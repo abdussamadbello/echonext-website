@@ -1,0 +1,10 @@
+{
+  "name": "EchoNext",
+  "short_name": "EchoNext",
+  "description": "Type-safe APIs for Go, powered by Echo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07110e",
+  "theme_color": "#0d1f19",
+  "icons": [{ "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

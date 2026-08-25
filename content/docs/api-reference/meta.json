@@ -1,0 +1,5 @@
+{
+  "title": "API Reference",
+  "icon": "Library",
+  "pages": ["app", "routes", "openapi", "validation"]
+}
