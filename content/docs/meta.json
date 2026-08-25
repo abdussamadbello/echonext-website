@@ -1,0 +1,4 @@
+{
+  "title": "Documentation",
+  "pages": ["index", "getting-started", "guides", "cli", "contrib", "architecture", "api-reference", "examples", "advanced", "faq", "troubleshooting", "changelog", "roadmap", "contributing"]
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Advanced",
+  "icon": "Gauge",
+  "pages": ["observability", "security", "performance", "microservices"]
+}

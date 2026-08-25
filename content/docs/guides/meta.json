@@ -1,0 +1,5 @@
+{
+  "title": "Core Guides",
+  "icon": "BookOpen",
+  "pages": ["api-development", "validation", "openapi", "error-handling", "middleware", "testing", "file-uploads", "websocket", "graphql", "deployment"]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07110e"/><stop offset="1" stop-color="#102b22"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g opacity=".12" stroke="#6ee7b7"><path d="M0 110h1200M0 220h1200M0 330h1200M0 440h1200M0 550h1200"/><path d="M160 0v630M360 0v630M560 0v630M760 0v630M960 0v630"/></g>
+  <rect x="90" y="105" width="96" height="96" rx="24" fill="#081310"/>
+  <path d="M108 156h16l8-28 14 54 10-40 8 14h16" fill="none" stroke="#6ee7b7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="90" y="310" fill="#f1f7f4" font-family="ui-sans-serif,system-ui" font-size="82" font-weight="700">EchoNext</text>
+  <text x="90" y="390" fill="#a9bcb4" font-family="ui-sans-serif,system-ui" font-size="34">Type-safe APIs for Go, powered by Echo.</text>
+  <text x="90" y="520" fill="#6ee7b7" font-family="ui-monospace,monospace" font-size="24">github.com/abdussamadbello/echonext</text>
+</svg>

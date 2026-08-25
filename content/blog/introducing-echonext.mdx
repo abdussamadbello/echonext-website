@@ -1,0 +1,54 @@
+---
+title: Why EchoNext keeps Echo in the picture
+description: A typed API layer is most useful when it strengthens the HTTP contract without hiding the framework underneath it.
+date: 2026-08-24
+author: EchoNext maintainers
+tags:
+  - design
+  - go
+  - echo
+draft: false
+---
+
+Echo is deliberately small. It gives Go services a fast router, a capable context, middleware, binding, rendering, and enough extension points to shape an application around its own constraints.
+
+EchoNext does not try to replace that foundation. It focuses on one narrower question: **how can a route's Go types become a useful HTTP contract?**
+
+## The cost of parallel definitions
+
+A conventional endpoint can accumulate several descriptions of the same behavior:
+
+- the request struct used by the handler;
+- the validation calls around that struct;
+- the response serialization;
+- an OpenAPI schema maintained elsewhere;
+- examples written by hand in documentation.
+
+Each description can be correct on its own and still disagree with the others after the endpoint changes.
+
+## Let the handler carry more information
+
+EchoNext reads the request and response types in a registered handler, binds and validates the request before business logic runs, and adds the same contract to an OpenAPI document.
+
+```go
+type CreateUserRequest struct {
+    Name  string `json:"name" validate:"required,min=2"`
+    Email string `json:"email" validate:"required,email"`
+}
+
+func createUser(c *echo.Context, req CreateUserRequest) (User, error) {
+    return users.Create(req)
+}
+```
+
+The point is not fewer lines at any cost. The point is that the remaining lines carry consistent information across the compiler, runtime validation, and generated documentation.
+
+## Keep the escape hatch close
+
+Some routes are a poor fit for a fixed JSON contract. Streaming responses, unusual content negotiation, and highly dynamic payloads can be clearer as standard Echo handlers.
+
+That is why EchoNext embeds Echo and allows typed and standard handlers to coexist. Adoption can happen endpoint by endpoint, and the underlying framework remains visible when a service needs it.
+
+## Start with the public boundary
+
+The best first candidate is usually an endpoint consumed outside the service: a route where request validation and accurate API documentation create immediate value. The [quickstart](/docs/getting-started/quickstart) shows the complete path from installation to generated Swagger UI.

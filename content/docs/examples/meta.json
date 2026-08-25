@@ -1,0 +1,5 @@
+{
+  "title": "Examples",
+  "icon": "Braces",
+  "pages": ["index", "patterns", "migration"]
+}

@@ -1,0 +1,45 @@
+---
+title: EchoNext documentation
+description: Build typed, validated, and self-documenting APIs on Echo.
+---
+
+# EchoNext documentation
+
+EchoNext wraps Echo with typed handlers, automatic request validation, consistent responses, and OpenAPI generation. It keeps the underlying Echo application available, so typed routes and standard handlers can coexist.
+
+<Callout title="Stable documentation">
+  These guides target **EchoNext v1.5.0**, Go 1.26, and Echo v5. Handlers take `*echo.Context` as of v1.5.0 — see the [changelog](/docs/changelog) for the breaking changes from the v1.4 line.
+</Callout>
+
+## Start here
+
+<Cards>
+  <Card title="Install EchoNext" href="/docs/getting-started/installation" description="Add the stable library and optional CLI to a Go project." />
+  <Card title="Build your first API" href="/docs/getting-started/quickstart" description="Create a validated Todo API and serve generated Swagger UI." />
+  <Card title="Understand the model" href="/docs/getting-started/concepts" description="Learn how handler types drive binding, validation, responses, and schemas." />
+  <Card title="Explore examples" href="/docs/examples" description="Move from a small REST API to integrations and service patterns." />
+</Cards>
+
+## Choose a path
+
+- **Building HTTP APIs:** continue with [API development](/docs/guides/api-development), [validation](/docs/guides/validation), and [OpenAPI](/docs/guides/openapi).
+- **Starting a service:** use the [CLI](/docs/cli/overview) and review the [architecture overview](/docs/architecture/overview).
+- **Adding infrastructure:** choose from the optional [database](/docs/contrib/database), [configuration](/docs/contrib/config), [testing](/docs/contrib/testing), and [middleware](/docs/contrib/middleware) packages.
+- **Adding integrations:** see [file uploads](/docs/guides/file-uploads), [WebSockets](/docs/guides/websocket), and [GraphQL](/docs/guides/graphql).
+- **Operating production services:** review [deployment](/docs/guides/deployment), [observability](/docs/advanced/observability), [security](/docs/advanced/security), and [performance](/docs/advanced/performance).
+
+## Installation at a glance
+
+```bash
+go get github.com/abdussamadbello/echonext@v1.5.0
+```
+
+```go
+app := echonext.New()
+
+app.GET("/health", func(c *echo.Context) (Health, error) {
+    return Health{Status: "ok"}, nil
+})
+```
+
+The full source is available on [GitHub](https://github.com/abdussamadbello/echonext) under the MIT license.
