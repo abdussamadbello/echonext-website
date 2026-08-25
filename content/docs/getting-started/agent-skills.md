@@ -5,7 +5,7 @@ description: Install the EchoNext agent skills so your AI coding assistant knows
 
 # Agent Skills
 
-EchoNext ships eight [Agent Skills](https://agentskills.io) — packaged instructions that teach
+EchoNext ships nine [Agent Skills](https://agentskills.io) — packaged instructions that teach
 AI coding assistants the framework's conventions. With them installed, your agent already knows
 how typed handlers are registered, where a domain's files belong, and which contrib helpers to
 reach for, instead of guessing from the surrounding code.
@@ -23,7 +23,7 @@ This works with Claude Code, Cursor, GitHub Copilot, VS Code, Gemini CLI, OpenCo
 Amp, Kiro, Zed, and [40+ other clients](https://agentskills.io/clients) that support the format.
 The installer detects which agents you have and writes the skills into each one's skills directory.
 
-To install a single skill instead of all eight:
+To install a single skill instead of all nine:
 
 ```bash
 npx skills add abdussamadbello/echonext -s echonext-handlers
@@ -44,7 +44,7 @@ Claude Code can also install the skills as a versioned plugin:
 /plugin install echonext@echonext
 ```
 
-Both routes deliver the same eight skills. The plugin route tracks the release version and
+Both routes deliver the same nine skills. The plugin route tracks the release version and
 appears in `/plugin list`; the `npx skills` route reaches more assistants.
 
 ## Scaffold a project with the skills included
@@ -75,6 +75,7 @@ npx skills experimental_install
 | `echonext-middleware-config` | Middleware ordering, custom `echo.MiddlewareFunc`, YAML/env config |
 | `echonext-integrations` | WebSocket hubs, gqlgen GraphQL, multipart file uploads |
 | `echonext-testing` | The `APIClient`, `Suite`, and `FixtureManager` helpers |
+| `echonext-setup` | Installing EchoNext or its skills in a repo, and restoring from `skills-lock.json` |
 
 Each skill activates on its own when the task matches — asking your agent to "add a users
 endpoint" pulls in `echonext-domain`, while "write a test for this handler" pulls in
