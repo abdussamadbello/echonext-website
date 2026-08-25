@@ -9,6 +9,7 @@ import {
   Radio,
   ShieldCheck,
   TerminalSquare,
+  Wrench,
 } from 'lucide-react';
 import { MarketingLayout, PageHero } from '@/components/marketing-layout';
 import { pageHead, siteConfig } from '@/lib/site-config';
@@ -17,7 +18,7 @@ export const Route = createFileRoute('/skills')({
   head: () =>
     pageHead(
       'Agent Skills',
-      'Install eight EchoNext agent skills so your AI coding assistant knows the framework’s conventions instead of guessing.',
+      'Install nine EchoNext agent skills so your AI coding assistant knows the framework’s conventions instead of guessing.',
       '/skills',
     ),
   component: Skills,
@@ -32,6 +33,7 @@ const skills = [
   ['echonext-middleware-config', 'Middleware registration and ordering, custom echo.MiddlewareFunc, and YAML or env config.', Layers, ['Middleware']],
   ['echonext-integrations', 'WebSocket hubs, gqlgen GraphQL wiring, and multipart file uploads.', Radio, ['Realtime', 'GraphQL']],
   ['echonext-testing', 'The APIClient, Suite, and FixtureManager helpers for testing handlers and services.', FlaskConical, ['Testing']],
+  ['echonext-setup', 'Installing EchoNext or its skills in a repository, scoping a global install, and restoring from a lockfile.', Wrench, ['Setup']],
 ] as const;
 
 const clients = [
@@ -56,7 +58,7 @@ function Skills() {
         <PageHero
           eyebrow="Agent skills"
           title="Your assistant already knows EchoNext."
-          description="Eight skills teach AI coding agents how this framework is actually built — handler signatures, domain layout, migrations, and generated docs. One command, and the guessing stops."
+          description="Nine skills teach AI coding agents how this framework is actually built — handler signatures, domain layout, migrations, and generated docs. One command, and the guessing stops."
         />
 
         <section className="content-section site-container">
@@ -97,7 +99,7 @@ function Skills() {
             <div className="section-heading">
               <div>
                 <p className="eyebrow">What ships</p>
-                <h2>Eight skills, loaded on demand.</h2>
+                <h2>Nine skills, loaded on demand.</h2>
               </div>
               <p>
                 Each skill activates on its own when the task matches. Ask for a users endpoint and the domain
